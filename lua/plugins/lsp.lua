@@ -37,16 +37,6 @@ return {
           },
         },
       })
-      lspconfig["drools_lsp"].setup({
-        capabilities = capabilities
-      })
-      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-        pattern = "*.drl",
-        callback = function()
-          vim.bo.filetype = "drools"
-        end
-      })
-      vim.treesitter.language.register('java', 'drl')  -- the someft filetype will use the python parser and queries.
 
       -- LSP attach
       vim.api.nvim_create_autocmd("LspAttach", {

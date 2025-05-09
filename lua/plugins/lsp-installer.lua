@@ -1,6 +1,6 @@
 return {
     "williamboman/nvim-lsp-installer",
-    config = function() 
+    config = function()
         require("nvim-lsp-installer").setup {}
     end
 }
