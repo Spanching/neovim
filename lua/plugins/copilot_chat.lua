@@ -1,14 +1,13 @@
 return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
     dependencies = {
-      { "zbirenbaum/copilot.lua" },       -- or github/copilot.vim
-      { "nvim-lua/plenary.nvim" },        -- for curl, log wrapper
+      { "zbirenbaum/copilot.lua" },
+      { "nvim-lua/plenary.nvim" },
     },
     opts = {
-      debug = false,       -- Enable debugging
-    },
+
+   },
     -- See Commands section for default commands if you want to lazy load on them
     config = function()
       require('CopilotChat').setup({
@@ -20,6 +19,8 @@ return {
             layout = 'float',
             title = 'Copilot Chat',
           },
+          auto_insert_mode = true,
+          insert_at_end = true,
         })
       end)
       vim.keymap.set("n", "<leader>cce", function()
@@ -28,6 +29,8 @@ return {
             layout = 'float',
             title = 'Copilot Chat',
           },
+          auto_insert_mode = true,
+          insert_at_end = true,
           selection = require("CopilotChat.select").buffer,
         })
       end)
