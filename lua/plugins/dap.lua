@@ -7,31 +7,6 @@ return {
     },
     config = function()
       local dap = require('dap')
-      -- -- Modify your existing configuration to minimize length
-      -- dap.adapters.java = {
-      --   type = 'executable',
-      --   command = 'java',
-      --   args = { '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:{port}', '-cp', 'shortened_classpath' }
-      -- }
-      --
-      -- dap.configurations.java = {
-      --   {
-      --     type = 'java',
-      --     request = 'launch',
-      --     name = "Debug (Launch)",
-      --     mainClass = "${file}",
-      --     projectRoot = "${workspaceFolder}",
-      --   }
-      -- }
-      -- dap.configurations.java = {
-      --   {
-      --     type = 'java',
-      --     request = 'attach',
-      --     name = "Debug (Attach) - Remote",
-      --     hostName = "127.0.0.1",
-      --     port = 6105,
-      --   },
-      -- }
       local dapui = require("dapui")
       dapui.setup()
       dap.listeners.before.attach.dapui_config = function()
@@ -59,6 +34,7 @@ return {
       vim.keymap.set('n', '<Leader>dx', function() dap.terminate() end)
       vim.keymap.set('n', '<Leader>da', function() dap.restart() end)
       vim.keymap.set('n', '<leader>dc', function() dapui.close() end)
+      vim.keymap.set('n', '<leader>do', function() dapui.open() end)
       vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
         require('dap.ui.widgets').hover()
       end)
