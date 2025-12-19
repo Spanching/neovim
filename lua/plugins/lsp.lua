@@ -5,7 +5,7 @@ return {
   {
     "hrsh7th/cmp-nvim-lsp",
     config = function()
-      local servers = { "pyright", "lua_ls", "marksman", "jsonls" }
+      local servers = { "pyright", "lua_ls", "marksman", "jsonls", "nixd" }
 
       require("mason").setup()
 
@@ -21,6 +21,17 @@ return {
           },
         },
       }
+
+      vim.lsp.config.nixd = {
+        settings = {
+          nixd = {
+            formatting = {
+              command = { "nixfmt" }
+            },
+          },
+        },
+      }
+
       vim.lsp.enable(servers)
 
       -- LSP attach

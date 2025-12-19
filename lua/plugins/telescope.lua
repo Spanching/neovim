@@ -40,8 +40,8 @@ return {
           layout_strategy = 'vertical',
           mappings = {
             i = {
-              ["<C-k>"] = "move_selection_next",
-              ["<C-j>"] = "move_selection_previous",
+              ["<C-k>"] = "move_selection_previous",
+              ["<C-j>"] = "move_selection_next",
             },
           }
         },
