@@ -10,7 +10,7 @@ return {
     config = function()
         require("auto-save").setup {
             condition = function(buf)
-                if string.match(vim.loop.cwd(), ".config\\nvim$") then
+                if string.match(vim.loop.cwd(), ".config/nvim$") then
                     return false
                 end
                 if pcall(IsHarpoon, buf) then

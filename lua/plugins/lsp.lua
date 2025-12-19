@@ -5,16 +5,15 @@ return {
   {
     "hrsh7th/cmp-nvim-lsp",
     config = function()
-      local servers = { "pyright", "lua_ls", "marksman", "jsonls", "nixd" }
+      local servers = { "pyright", "lua_ls", "marksman", "json_ls", "nil_ls" }
 
       require("mason").setup()
 
       vim.lsp.config.lua_ls = {
+        cmd = { 'lua-language-server' },
+        filetypes = { 'lua' },
         settings = {
           Lua = {
-            diagnostics = {
-              -- globals = { "vim", "require" },
-            },
             workspace = {
               library = vim.api.nvim_get_runtime_file("", true),
             }
@@ -22,14 +21,31 @@ return {
         },
       }
 
-      vim.lsp.config.nixd = {
-        settings = {
-          nixd = {
-            formatting = {
-              command = { "nixfmt" }
-            },
-          },
+      vim.lsp.config.json_ls = {
+        cmd = { '/etc/profiles/per-user/andreas/bin/vscode-json-language-server', '--stdio' },
+        filetypes = { 'json', 'jsonc' },
+        -- settings = {
+        --   json = {
+        --     validate = { enable = true },
+        --   },
+        -- },
+        capabilities = {
+          textDocument = {
+            completion = {
+              completionItem = {
+                snippetSupport = true
+              }
+            }
+          }
         },
+        handlers = {
+          ['workspace/diagnostic/refresh'] = function() end,
+        }
+      }
+
+      vim.lsp.config.nil_ls = {
+        cmd = { 'nil' },
+        filetypes = { 'nix' },
       }
 
       vim.lsp.enable(servers)
