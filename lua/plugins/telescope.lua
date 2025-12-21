@@ -69,7 +69,7 @@ return {
             path_display = filenameFirst,
             theme = "dropdown",
           },
-          git_files = {
+          resume = {
             path_display = filenameFirst,
             theme = "dropdown",
           },
@@ -111,28 +111,28 @@ return {
       local builtin = require("telescope.builtin")
 
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-      vim.keymap.set("n", "<leader>fr", builtin.git_files, {})
+      vim.keymap.set("n", "<leader>fr", builtin.resume, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
       vim.keymap.set("n", "<leader>fs", builtin.grep_string, {})
 
       vim.keymap.set("v", "<leader>ff", grep_visual(builtin.find_files))
-      vim.keymap.set("v", "<leader>fr", grep_visual(builtin.git_files))
+      vim.keymap.set("v", "<leader>fr", grep_visual(builtin.resume))
       vim.keymap.set("v", "<leader>fg", grep_visual(builtin.live_grep))
       vim.keymap.set("v", "<leader>fb", grep_visual(builtin.buffers))
       vim.keymap.set("v", "<leader>fh", grep_visual(builtin.help_tags))
       vim.keymap.set("v", "<leader>fs", grep_visual(builtin.grep_string))
 
       vim.keymap.set("n", "<leader>Ff", grep_word(builtin.find_files))
-      vim.keymap.set("n", "<leader>Fr", grep_word(builtin.git_files))
+      vim.keymap.set("n", "<leader>Fr", grep_word(builtin.resume))
       vim.keymap.set("n", "<leader>Fg", grep_word(builtin.live_grep))
       vim.keymap.set("n", "<leader>Fb", grep_word(builtin.buffers))
       vim.keymap.set("n", "<leader>Fh", grep_word(builtin.help_tags))
       vim.keymap.set("n", "<leader>Fs", grep_word(builtin.grep_string))
 
       vim.keymap.set("n", "<leader>FF", grep_WORD(builtin.find_files))
-      vim.keymap.set("n", "<leader>FR", grep_WORD(builtin.git_files))
+      vim.keymap.set("n", "<leader>FR", grep_WORD(builtin.resume))
       vim.keymap.set("n", "<leader>FG", grep_WORD(builtin.live_grep))
       vim.keymap.set("n", "<leader>FB", grep_WORD(builtin.buffers))
       vim.keymap.set("n", "<leader>FH", grep_WORD(builtin.help_tags))
