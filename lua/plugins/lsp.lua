@@ -5,9 +5,14 @@ return {
   {
     "hrsh7th/cmp-nvim-lsp",
     config = function()
-      local servers = { "pyright", "lua_ls", "marksman", "json_ls", "nil_ls" }
+      local servers = { "pyright", "lua_ls", "marksman", "json_ls", "nil_ls", "gopls", "clangd" }
 
       require("mason").setup()
+
+      vim.lsp.config.clangd = {
+        cmd = { 'clangd' },
+        filetypes = { 'c', 'h' },
+      }
 
       vim.lsp.config.lua_ls = {
         cmd = { 'lua-language-server' },
@@ -46,6 +51,11 @@ return {
       vim.lsp.config.nil_ls = {
         cmd = { 'nil' },
         filetypes = { 'nix' },
+      }
+
+      vim.lsp.config.gopls = {
+        cmd = { 'gopls' },
+        filetypes = { 'go' },
       }
 
       vim.lsp.enable(servers)

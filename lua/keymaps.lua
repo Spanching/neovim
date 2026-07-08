@@ -35,14 +35,10 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Easy tabs in normal mode
-vim.keymap.set("n", "<leader>>", "v>")
-vim.keymap.set("n", "<leader><", "v<")
-
 -- Easy line manipulation
-vim.keymap.set("n", "<leader>ld", "yyp")
-vim.keymap.set("n", "<leader>lj", ":m .+1<CR>==")
-vim.keymap.set("n", "<leader>lk", ":m .-2<CR>==")
+vim.keymap.set("n", "<A-d>", "yyp")
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>")
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>")
 
 -- easy yank to system clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", '"+y')
@@ -50,5 +46,5 @@ vim.keymap.set({"n", "v"}, "<leader>y", '"+y')
 vim.keymap.set('t', '<M-q>', '<C-\\><C-n>')
 
 -- method jumping
-vim.keymap.set('n', '<leader>mn', ']m')
-vim.keymap.set('n', '<leader>mp', '[m')
+vim.keymap.set('n', 'mn', ']m')
+vim.keymap.set('n', 'mp', '[m')

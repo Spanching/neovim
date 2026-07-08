@@ -47,6 +47,9 @@ return {
       filters = {
         dotfiles = false,
       },
+      git = {
+        ignore = false,
+      },
       on_attach = my_on_attach,
       git = {
         ignore = false,
