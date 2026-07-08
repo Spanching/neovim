@@ -48,6 +48,9 @@ return {
         dotfiles = false,
       },
       on_attach = my_on_attach,
+      git = {
+        ignore = false,
+      },
     })
 
     vim.keymap.set("n", "<leader>ee", vim.cmd.NvimTreeToggle)
